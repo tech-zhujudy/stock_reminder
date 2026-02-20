@@ -1,0 +1,36 @@
+# Stock Reminder Configuration
+# =============================
+
+tickers:
+  energy:
+    - BRK-B   # Berkshire Hathaway (Yahoo Finance uses hyphen)
+    - OXY     # Occidental Petroleum
+    - XLE     # Energy Select Sector SPDR Fund
+    - VDE     # Vanguard Energy ETF
+  magnificent_seven:
+    - NVDA    # Nvidia
+    - AAPL    # Apple
+    - MSFT    # Microsoft
+    - GOOGL   # Alphabet
+    - META    # Meta Platforms
+    - AMZN    # Amazon
+    - TSLA    # Tesla
+  index:
+    - SPY     # S&P 500 ETF
+
+strategies:
+  mean_dip:
+    enabled: true
+    lookback_days: 90      # ~3 months of trading data
+    threshold_pct: 10      # trigger if price is >= 10% below average
+
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  sender_email: ""              # Your sending email address
+  sender_password: ""           # App password (not your account password)
+  recipients:
+    - "tech@zhujudy.com"
+
+schedule:
+  run_time: "09:30"             # Daily run time (local time, 24h format)
